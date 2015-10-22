@@ -14,6 +14,7 @@ gem 'bootswatch-rails'
 gem 'react-rails', '~> 1.3.0'
 gem 'react-router-rails', '~>0.13.3.1'
 gem 'haml'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'
