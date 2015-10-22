@@ -32,7 +32,9 @@ var App = React.createClass({
           </div>
         </nav>
         <div id="content" className='container'>
-          <ReactRouter.RouteHandler />
+          <ReactCSSTransitionGroup transitionName="fade-in" transitionAppear={true} transitionAppearTimeout={500}>
+            <ReactRouter.RouteHandler />
+          </ReactCSSTransitionGroup>
         </div>
       </div>
     );

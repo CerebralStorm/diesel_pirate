@@ -14,7 +14,9 @@ var Carousel = React.createClass({
               <div className="carousel-caption">
                 <h1>Diesel Pirate</h1>
                 <p>You name it, we clean it. Call us or schedule an appointment today! Phone: 801-432-057</p>
-                <p><a className="btn btn-lg btn-primary" href="#" role="button">Schedule Me!</a></p>
+                <ReactRouter.Link to='/contact'>
+                  <p><span className="btn btn-lg btn-primary" href="#" role="button">Schedule Me!</span></p>
+                </ReactRouter.Link>
               </div>
             </div>
           </div>

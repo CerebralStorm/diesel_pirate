@@ -19,3 +19,6 @@
 //= require react_router_ujs
 //= require components
 //= require_tree .
+
+
+var ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
