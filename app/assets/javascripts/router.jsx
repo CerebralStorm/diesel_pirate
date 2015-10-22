@@ -3,6 +3,7 @@ var routes = (
     <ReactRouter.DefaultRoute handler={Home}/>
     <ReactRouter.Route path='/services' handler={ServicesIndex}/>
     <ReactRouter.Route path='/contact' handler={ContactIndex}/>
+    <ReactRouter.Route path='/photos' handler={PhotosIndex}/>
   </ReactRouter.Route>
 );
 

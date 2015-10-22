@@ -13,28 +13,35 @@ var App = React.createClass({
             <div className="collapse navbar-collapse">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <a href='#'>Home</a>
+                  <ReactRouter.Link to='/'>
+                    Home
+                  </ReactRouter.Link>
                 </li>
                 <li>
-                  <a href='#'>About</a>
+                  <ReactRouter.Link to='/services'>
+                    Services
+                  </ReactRouter.Link>
                 </li>
                 <li>
-                  <a href='#'>Services</a>
+                  <ReactRouter.Link to='/photos'>
+                    Photos
+                  </ReactRouter.Link>
                 </li>
                 <li>
-                  <a href='#'>Photos</a>
-                </li>
-                <li>
-                  <a href='#'>Contact</a>
+                  <ReactRouter.Link to='/contact'>
+                    Contact
+                  </ReactRouter.Link>
                 </li>
               </ul>
             </div>
           </div>
         </nav>
         <div id="content" className='container'>
-          <ReactCSSTransitionGroup transitionName="fade-in" transitionAppear={true} transitionAppearTimeout={500}>
-            <ReactRouter.RouteHandler />
-          </ReactCSSTransitionGroup>
+          <ReactRouter.RouteHandler />
+
+          <footer>
+            <p>&copy; 2012 Diesel Pirate, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+          </footer>
         </div>
       </div>
     );
