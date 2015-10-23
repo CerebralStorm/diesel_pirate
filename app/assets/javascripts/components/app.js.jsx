@@ -39,6 +39,7 @@ var App = React.createClass({
         <div id="content" className='container'>
           <ReactRouter.RouteHandler />
 
+          <hr />
           <footer>
             <p>&copy; 2012 Diesel Pirate, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
           </footer>
