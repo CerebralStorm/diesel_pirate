@@ -1,0 +1,35 @@
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.flip-appear {
+  transform: rotateY(180deg);
+}
+
+.flip-appear.flip-appear-active {
+  transform: rotateY(0deg);
+  transition: all .5s ease-in;
+}
+
+.flip-leave {
+  transform: rotateY(180deg);
+}
+
+.flip-leave.flip-leave-active {
+  transform: rotateY(0deg);
+  transition: all 300ms ease-in;
+}
