@@ -18,6 +18,9 @@
 //= require react_router
 //= require react_router_ujs
 //= require components
+//= require formValidation/formValidation
+//= require formValidation/en_US
+//= require formValidation/bootstrap
 //= require_tree .
 
 
