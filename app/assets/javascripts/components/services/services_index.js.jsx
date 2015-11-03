@@ -3,7 +3,7 @@ var ServicesIndex = React.createClass({
     return (
       <div>
         <ReactCSSTransitionGroup transitionName="fade" transitionAppear={true} transitionAppearTimeout={500} transitionLeaveTimeout={300}>
-          <h1>Services</h1>
+          <h1 className='text-center'>Services</h1>
           <hr />
           <Featurette
             header={"Mobile Detailing "}

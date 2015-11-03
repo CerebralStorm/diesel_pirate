@@ -3,7 +3,7 @@ var ContactIndex = React.createClass({
     return (
       <div>
         <ReactCSSTransitionGroup transitionName="fade" transitionAppear={true} transitionAppearTimeout={500} transitionLeaveTimeout={300}>
-          <h1>Contact Us</h1>
+          <h1 className='text-center'>Contact Us</h1>
           <div className="container">
           <div className="row">
             <div className="col-md-12">
