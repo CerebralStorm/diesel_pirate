@@ -1,15 +1,17 @@
 var Carousel = React.createClass({
   render: function() {
     return (
-      <div id="myCarousel" className="carousel slide" data-ride="carousel">
+      <div id="home-carousel" className="carousel slide" data-ride="carousel">
         <ol className="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" className="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#home-carousel" data-slide-to="0" className="active"></li>
+          <li data-target="#home-carousel" data-slide-to="1"></li>
+          <li data-target="#home-carousel" data-slide-to="2"></li>
         </ol>
         <div className="carousel-inner" role="listbox">
           <div className="item active">
-            <img className="first-slide" src="<%= asset_path('truck1.jpg') %>" alt="First slide" />
+            <div className="wrapper">
+               <img src="<%= asset_path('truck-wash1.png') %>" width='100%;' className="img-responsive" alt="Responsive image" />
+            </div>
             <div className="container">
               <div className="carousel-caption">
                 <h1>Diesel Pirate</h1>
@@ -21,11 +23,11 @@ var Carousel = React.createClass({
             </div>
           </div>
         </div>
-        <a className="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <a className="left carousel-control" href="#home-carousel" role="button" data-slide="prev">
           <span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
           <span className="sr-only">Previous</span>
         </a>
-        <a className="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <a className="right carousel-control" href="#home-carousel" role="button" data-slide="next">
           <span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
           <span className="sr-only">Next</span>
         </a>

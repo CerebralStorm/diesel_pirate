@@ -15,12 +15,16 @@ var Featurette = React.createClass({
   },
   render: function() {
     return (
-      <div className="row">
-        <div className={this.leftClass()}>
-          <FeaturetteDescription header={this.props.header} subtext={this.props.subtext} description={this.props.description} />
-        </div>
-        <div className={this.rightClass()}>
-          <FeaturetteImage imageUrl={this.props.imageUrl} />
+      <div className={this.props.backgroundClass + ' featurette-container'}>
+        <div className='container'>
+          <div className="row">
+            <div className={this.leftClass()}>
+              <FeaturetteDescription header={this.props.header} subtext={this.props.subtext} description={this.props.description} />
+            </div>
+            <div className={this.rightClass()}>
+              <FeaturetteImage imageUrl={this.props.imageUrl} />
+            </div>
+          </div>
         </div>
       </div>
     );
