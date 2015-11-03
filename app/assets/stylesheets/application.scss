@@ -80,22 +80,22 @@ h1, h2, h3 {
 }
 
 .texture-1 {
-  background-image: url("texture1.jpg");
+  background-image: image-url("texture1.jpg");
   background-repeat: repeat
 }
 
 .texture-2 {
-  background-image: url("texture2.png");
+  background-image: image-url("texture2.png");
   background-repeat: repeat
 }
 
 .texture-3 {
-  background-image: url("texture3.jpg");
+  background-image: image-url("texture3.jpg");
   background-repeat: repeat
 }
 
 .texture-4 {
-  background-image: url("texture4.jpg");
+  background-image: image-url("texture4.jpg");
   background-repeat: repeat
 }
 
