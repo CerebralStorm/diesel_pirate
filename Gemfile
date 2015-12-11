@@ -16,6 +16,8 @@ gem 'react-router-rails', '~>0.13.3.1'
 gem 'haml'
 gem "font-awesome-rails"
 gem 'rails_12factor', group: :production
+gem 'foreman'
+gem 'thin'
 
 group :development, :test do
   gem 'byebug'
