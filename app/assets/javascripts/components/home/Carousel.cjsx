@@ -48,7 +48,7 @@ Carousel = React.createClass
       <div className="carousel-inner" role="listbox">
         <div className="item active">
           <div className="wrapper">
-             <img src="/images/truck-wash1.png" width='100%;' className="img-responsive" alt="Responsive image" />
+             <img src="/assets/truck-wash1.png" width='100%;' className="img-responsive" alt="Responsive image" />
           </div>
           <div className="container">
             <div className="carousel-caption">

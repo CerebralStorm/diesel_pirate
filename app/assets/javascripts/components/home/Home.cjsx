@@ -15,13 +15,13 @@ Home = React.createClass
           <div className='container'>
             <div className="row">
               <div className="col-lg-4">
-                <InfoCard imageUrl={'/images/th_th_donavon1.jpg'} title={'Mobile Detailing'} description={'Diesel Pirate uses our elite power washing system to blow away all the dirt and grim. Do you have an old decal you need removed from the truck? That’s our specialty! We then take the time to gently detail the exterior and interior of the truck. We service new and used trucks.'} />
+                <InfoCard imageUrl={'/assets/th_th_donavon1.jpg'} title={'Mobile Detailing'} description={'Diesel Pirate uses our elite power washing system to blow away all the dirt and grim. Do you have an old decal you need removed from the truck? That’s our specialty! We then take the time to gently detail the exterior and interior of the truck. We service new and used trucks.'} />
               </div>
               <div className="col-lg-4">
-                <InfoCard imageUrl={'/images/th_james1.jpg'} title={'Power Washing'} description={'If it can be power washed we can do it–including home, airplane, construction, and driveways. We are licensed and insured and will work with your schedule and come to you 24 hours a day'} />
+                <InfoCard imageUrl={'/assets/th_james1.jpg'} title={'Power Washing'} description={'If it can be power washed we can do it–including home, airplane, construction, and driveways. We are licensed and insured and will work with your schedule and come to you 24 hours a day'} />
               </div>
               <div className="col-lg-4">
-                <InfoCard imageUrl={'/images/th_jeremiah1.jpg'} title={'Sand Blasting'} description={'Whatever you get dirty we can get clean. Local owned and operated right in the Salt Lake Valley.'} />
+                <InfoCard imageUrl={'/assets/th_jeremiah1.jpg'} title={'Sand Blasting'} description={'Whatever you get dirty we can get clean. Local owned and operated right in the Salt Lake Valley.'} />
               </div>
             </div>
           </div>

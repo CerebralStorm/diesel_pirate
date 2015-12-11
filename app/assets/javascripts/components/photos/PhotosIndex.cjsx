@@ -1,5 +1,6 @@
 React = require('react')
 ReactCSSTransitionGroup = require('react-addons-css-transition-group')
+FeaturetteImage = require('../home/FeaturetteImage.cjsx')
 
 PhotosIndex = React.createClass
   getInitialState: ->

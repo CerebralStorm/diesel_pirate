@@ -1,6 +1,7 @@
 React = require('react')
 ReactRouter = require('react-router')
 ReactCSSTransitionGroup = require('react-addons-css-transition-group')
+ContactForm = require('./ContactForm.cjsx')
 
 ContactIndex = React.createClass
   render: ->

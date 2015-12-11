@@ -8,7 +8,7 @@ App = React.createClass
           <div className='row no-pad no-margin' role="navigation">
 
             <ReactRouter.Link id='brand-logo' className='col-lg-4 col-md-4 col-sm-4 col-xs-4' to='/'>
-              <img src="/images/brand-logo.png" className='img-responsive' alt='brand logo' />
+              <img src="/assets/brand-logo.png" className='img-responsive' alt='brand logo' />
             </ReactRouter.Link>
 
             <ReactRouter.Link className='col-lg-2 col-md-2 col-sm-2 col-xs-2 nav-link text-uppercase' role="navigation" to='/'>

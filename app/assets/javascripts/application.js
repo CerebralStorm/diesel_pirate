@@ -58,7 +58,7 @@
 
 	ContactIndex = __webpack_require__(216);
 
-	PhotosIndex = __webpack_require__(217);
+	PhotosIndex = __webpack_require__(218);
 
 	ReactRouter = __webpack_require__(160);
 
@@ -28760,7 +28760,7 @@
 	      "className": 'col-lg-4 col-md-4 col-sm-4 col-xs-4',
 	      "to": '/'
 	    }, React.createElement("img", {
-	      "src": "/images/brand-logo.png",
+	      "src": "/assets/brand-logo.png",
 	      "className": 'img-responsive',
 	      "alt": 'brand logo'
 	    })), React.createElement(ReactRouter.Link, {
@@ -32069,19 +32069,19 @@
 	    }, React.createElement("div", {
 	      "className": "col-lg-4"
 	    }, React.createElement(InfoCard, {
-	      "imageUrl": '/images/th_th_donavon1.jpg',
+	      "imageUrl": '/assets/th_th_donavon1.jpg',
 	      "title": 'Mobile Detailing',
 	      "description": 'Diesel Pirate uses our elite power washing system to blow away all the dirt and grim. Do you have an old decal you need removed from the truck? That’s our specialty! We then take the time to gently detail the exterior and interior of the truck. We service new and used trucks.'
 	    })), React.createElement("div", {
 	      "className": "col-lg-4"
 	    }, React.createElement(InfoCard, {
-	      "imageUrl": '/images/th_james1.jpg',
+	      "imageUrl": '/assets/th_james1.jpg',
 	      "title": 'Power Washing',
 	      "description": 'If it can be power washed we can do it–including home, airplane, construction, and driveways. We are licensed and insured and will work with your schedule and come to you 24 hours a day'
 	    })), React.createElement("div", {
 	      "className": "col-lg-4"
 	    }, React.createElement(InfoCard, {
-	      "imageUrl": '/images/th_jeremiah1.jpg',
+	      "imageUrl": '/assets/th_jeremiah1.jpg',
 	      "title": 'Sand Blasting',
 	      "description": 'Whatever you get dirty we can get clean. Local owned and operated right in the Salt Lake Valley.'
 	    }))))), React.createElement(Featurette, {
@@ -33017,7 +33017,7 @@
 	    }, React.createElement("div", {
 	      "className": "wrapper"
 	    }, React.createElement("img", {
-	      "src": "/images/truck-wash1.png",
+	      "src": "/assets/truck-wash1.png",
 	      "width": '100%;',
 	      "className": "img-responsive",
 	      "alt": "Responsive image"
@@ -33189,11 +33189,13 @@
 /* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React, ReactCSSTransitionGroup, ServicesIndex;
+	var Featurette, React, ReactCSSTransitionGroup, ServicesIndex;
 
 	React = __webpack_require__(2);
 
 	ReactCSSTransitionGroup = __webpack_require__(203);
+
+	Featurette = __webpack_require__(212);
 
 	ServicesIndex = React.createClass({
 	  render: function() {
@@ -33233,13 +33235,15 @@
 /* 216 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ContactIndex, React, ReactCSSTransitionGroup, ReactRouter;
+	var ContactForm, ContactIndex, React, ReactCSSTransitionGroup, ReactRouter;
 
 	React = __webpack_require__(2);
 
 	ReactRouter = __webpack_require__(160);
 
 	ReactCSSTransitionGroup = __webpack_require__(203);
+
+	ContactForm = __webpack_require__(217);
 
 	ContactIndex = React.createClass({
 	  render: function() {
@@ -33289,11 +33293,193 @@
 /* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var PhotosIndex, React, ReactCSSTransitionGroup;
+	/* WEBPACK VAR INJECTION */(function($) {var ContactForm, React, ReactRouter;
+
+	React = __webpack_require__(2);
+
+	ReactRouter = __webpack_require__(160);
+
+	ContactForm = React.createClass({
+	  mixins: [ReactRouter.Navigation],
+	  getInitialState: function() {
+	    return {
+	      name: '',
+	      email: '',
+	      body: ''
+	    };
+	  },
+	  handleSubmit: function(e) {
+	    var method, ref, url;
+	    e.preventDefault();
+	    url = '/api/v1/messages';
+	    if (this.props.messageId) {
+	      url += '/' + this.props.messageId;
+	    }
+	    method = (ref = this.props.messageId) != null ? ref : {
+	      'put': 'post'
+	    };
+	    return $.ajax(function(url) {
+	      return {
+	        dataType: 'json',
+	        type: method,
+	        data: {
+	          message: {
+	            name: this.state.name,
+	            email: this.state.email,
+	            body: this.state.body
+	          }
+	        },
+	        success: function(data) {
+	          if (this.props.message) {
+	            return this.props.message.setState({
+	              editing: false,
+	              name: this.state.name,
+	              email: this.state.email,
+	              body: this.state.body
+	            });
+	          } else {
+	            return this.transitionTo('/');
+	          }
+	        }
+	      };
+	    }).bind(this);
+	  },
+	  handleChange: function(e) {
+	    if (e.target.id === 'message_name') {
+	      this.setState({
+	        name: e.target.value
+	      });
+	    }
+	    if (e.target.id === 'message_email') {
+	      this.setState({
+	        email: e.target.value
+	      });
+	    }
+	    if (e.target.id === 'message_body') {
+	      return this.setState({
+	        body: e.target.value
+	      });
+	    }
+	  },
+	  componentDidMount: function() {
+	    if (this.props.name || this.props.body) {
+	      this.setState({
+	        name: this.props.name,
+	        body: this.props.body
+	      });
+	    }
+	    return this.updateFormValidation();
+	  },
+	  componentDidUpdate: function() {
+	    return this.updateFormValidation();
+	  },
+	  updateFormValidation: function() {
+	    return $(this.getDOMNode()).find('form:first').formValidation().on('success.form.fv', function(e) {
+	      return e.preventDefault();
+	    });
+	  },
+	  render: function() {
+	    return React.createElement("form", {
+	      "className": "form",
+	      "onSubmit": this.handleSubmit,
+	      "data-fv-framework": "bootstrap",
+	      "data-fv-icon-valid": "glyphicon glyphicon-ok",
+	      "data-fv-icon-invalid": "glyphicon glyphicon-remove",
+	      "data-fv-icon-validating": "glyphicon glyphicon-refresh fa-spin"
+	    }, React.createElement("div", {
+	      "className": "col-lg-6"
+	    }, React.createElement("div", {
+	      "className": "well well-sm"
+	    }, React.createElement("strong", null, React.createElement("i", {
+	      "className": "fa fa-sun-o"
+	    }), " Indicates a Required Field")), React.createElement("div", {
+	      "className": "form-group"
+	    }, React.createElement("label", {
+	      "for": "message[name]"
+	    }, "Your Name"), React.createElement("div", {
+	      "className": "input-group"
+	    }, React.createElement("input", {
+	      "type": "text",
+	      "className": "form-control",
+	      "name": "message[name]",
+	      "id": "message_name",
+	      "placeholder": "Enter Name",
+	      "required": true,
+	      "onChange": this.handleChange,
+	      "value": this.state.name,
+	      "data-fv-notempty": "true",
+	      "data-fv-stringlength": "true",
+	      "data-fv-stringlength-min": "5",
+	      "data-fv-stringlength-max": "255"
+	    }), React.createElement("span", {
+	      "className": "input-group-addon"
+	    }, React.createElement("i", {
+	      "className": "fa fa-sun-o"
+	    })))), React.createElement("div", {
+	      "className": "form-group"
+	    }, React.createElement("label", {
+	      "for": "message[email]"
+	    }, "Your Email"), React.createElement("div", {
+	      "className": "input-group"
+	    }, React.createElement("input", {
+	      "type": "email",
+	      "className": "form-control",
+	      "id": "message_email",
+	      "name": "message[email]",
+	      "placeholder": "Enter Email",
+	      "onChange": this.handleChange,
+	      "value": this.state.email,
+	      "data-fv-notempty": "true",
+	      "data-fv-stringlength": "true",
+	      "data-fv-stringlength-min": "5",
+	      "data-fv-stringlength-max": "255"
+	    }), React.createElement("span", {
+	      "className": "input-group-addon"
+	    }, React.createElement("i", {
+	      "className": "fa fa-sun-o"
+	    })))), React.createElement("div", {
+	      "className": "form-group"
+	    }, React.createElement("label", {
+	      "for": "message[body]"
+	    }, "Message"), React.createElement("div", {
+	      "className": "input-group"
+	    }, React.createElement("textarea", {
+	      "name": "message[body]",
+	      "id": "message_body",
+	      "className": "form-control",
+	      "rows": "5",
+	      "required": true,
+	      "onChange": this.handleChange,
+	      "value": this.state.body,
+	      "data-fv-notempty": "true",
+	      "data-fv-stringlength": "true",
+	      "data-fv-stringlength-min": "5"
+	    }), React.createElement("span", {
+	      "className": "input-group-addon"
+	    }, React.createElement("i", {
+	      "className": "fa fa-sun-o"
+	    })))), React.createElement("input", {
+	      "type": "submit",
+	      "className": "btn btn-primary"
+	    })));
+	  }
+	});
+
+	module.exports = ContactForm;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var FeaturetteImage, PhotosIndex, React, ReactCSSTransitionGroup;
 
 	React = __webpack_require__(2);
 
 	ReactCSSTransitionGroup = __webpack_require__(203);
+
+	FeaturetteImage = __webpack_require__(214);
 
 	PhotosIndex = React.createClass({
 	  getInitialState: function() {

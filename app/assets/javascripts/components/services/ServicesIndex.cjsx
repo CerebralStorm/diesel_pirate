@@ -1,5 +1,6 @@
 React = require('react')
 ReactCSSTransitionGroup = require('react-addons-css-transition-group')
+Featurette = require('../home/Featurette.cjsx')
 
 ServicesIndex = React.createClass
   render: ->
