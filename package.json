@@ -13,7 +13,7 @@
     "react-cookie": "^0.4.2",
     "react-dom": "^0.14.2",
     "react-if": "^1.1.2",
-    "react-router": "^0.13.5",
+    "react-router": "^2.0.0",
     "react-side-effect": "^1.0",
     "react-toggle-display": "^2.0",
     "reflux": "^0.3.0"

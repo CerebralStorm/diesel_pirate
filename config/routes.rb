@@ -6,4 +6,6 @@ Rails.application.routes.draw do
       resources :messages, except: [:new, :edit]
     end
   end
+
+  match '*path' => 'static#route_catch', via: :get
 end

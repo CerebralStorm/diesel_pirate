@@ -1,26 +1,31 @@
 React = require('react')
 ReactDOM = require('react-dom')
+ReactRouter = require("react-router")
+Router = ReactRouter.Router
+Route = ReactRouter.Route
+browserHistory = ReactRouter.browserHistory
+
 App = require('./components/app/App.cjsx')
+NoMatch = require('./components/app/NoMatch.cjsx')
 Home = require('./components/home/Home.cjsx')
 ServicesIndex = require('./components/services/ServicesIndex.cjsx')
 ContactIndex = require('./components/contact/ContactIndex.cjsx')
 PhotosIndex = require('./components/photos/PhotosIndex.cjsx')
-ReactRouter = require("react-router")
-
-routes = (
-  <ReactRouter.Route path='/' handler={App}>
-    <ReactRouter.DefaultRoute handler={Home}/>
-    <ReactRouter.Route path='/services' handler={ServicesIndex}/>
-    <ReactRouter.Route path='/contact' handler={ContactIndex}/>
-    <ReactRouter.Route path='/photos' handler={PhotosIndex}/>
-  </ReactRouter.Route>
-);
 
 main = ->
   $(document).ready ->
-    container = document.getElementById('react-container')
-    if container
-      ReactRouter.run routes, (Handler) ->
-        ReactDOM.render(<Handler />, document.getElementById('react-container'))
+    Window.CSRFToken = $('meta[name="csrf-token"]')[0].content
+
+    ReactDOM.render((
+      <Router history={browserHistory}>
+        <Route component={App}>
+          <Route path="/" component={Home} />
+          <Route path="/services" component={ServicesIndex} />
+          <Route path="/contact" component={ContactIndex} />
+          <Route path="/photos" component={PhotosIndex} />
+          <Route path="*" component={NoMatch} />
+        </Route>
+      </Router>
+    ), document.getElementById('react-container'))
 
 main()
